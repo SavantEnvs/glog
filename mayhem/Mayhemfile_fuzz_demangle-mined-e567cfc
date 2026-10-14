@@ -1,0 +1,10 @@
+# seed-from: https://app.mayhem.security/savantenvs/glog/fuzz-demangle
+project: savantenvs/glog
+target: fuzz_demangle-mined-e567cfc
+cmds:
+  - cmd: /mayhem/fuzz_demangle
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_demangle.dict
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_demangle-mined-e567cfc/testsuite
